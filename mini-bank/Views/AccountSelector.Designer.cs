@@ -30,36 +30,30 @@ namespace MiniBank
         private void InitializeComponent()
         {
             this.grid_accounts = new System.Windows.Forms.DataGridView();
-            this.Select = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Select = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grid_accounts)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grid_accounts
             // 
+            this.grid_accounts.AllowUserToAddRows = false;
             this.grid_accounts.BackgroundColor = System.Drawing.Color.White;
             this.grid_accounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_accounts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Select});
+            this.Select,
+            this.Delete});
             this.grid_accounts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grid_accounts.Location = new System.Drawing.Point(0, 24);
             this.grid_accounts.Name = "grid_accounts";
             this.grid_accounts.Size = new System.Drawing.Size(638, 189);
             this.grid_accounts.TabIndex = 4;
             this.grid_accounts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_accounts_CellClick);
-            // 
-            // Select
-            // 
-            this.Select.Frozen = true;
-            this.Select.HeaderText = "";
-            this.Select.Name = "Select";
-            this.Select.ReadOnly = true;
-            this.Select.Text = "Select";
-            this.Select.UseColumnTextForButtonValue = true;
             // 
             // menuStrip1
             // 
@@ -94,6 +88,32 @@ namespace MiniBank
             this.cancelToolStripMenuItem.Text = "Cancel";
             this.cancelToolStripMenuItem.Click += new System.EventHandler(this.cancelToolStripMenuItem_Click);
             // 
+            // Select
+            // 
+            this.Select.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Select.Frozen = true;
+            this.Select.HeaderText = "Select";
+            this.Select.MinimumWidth = 2;
+            this.Select.Name = "Select";
+            this.Select.ReadOnly = true;
+            this.Select.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Select.Text = "Select";
+            this.Select.UseColumnTextForButtonValue = true;
+            this.Select.Width = 43;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Delete.Frozen = true;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.MinimumWidth = 2;
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
+            this.Delete.Width = 44;
+            // 
             // AccountSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,7 +136,8 @@ namespace MiniBank
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewButtonColumn Select;
         private System.Windows.Forms.ToolStripMenuItem cancelToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewButtonColumn Select;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }

@@ -20,22 +20,34 @@ namespace MiniBank
         private readonly EventHandler<Account> onSelectEvent;
         private readonly EventHandler onCancelled;
 
+
+        public string[] Files { get; set; }
+
         public List<Account> Accounts { get; set; } = new List<Account>();
+
+        private BindingSource AccountBinding = new BindingSource();
 
         public AccountSelector()
         {
             InitializeComponent();
 
+            Initialize();
+           
+        }
+
+
+        private void Initialize()
+        {
             var currentDirectory = Path.Combine(Environment.CurrentDirectory, "Data");
 
             if (!Directory.Exists(currentDirectory))
                 Directory.CreateDirectory(currentDirectory);
 
-            var files = Directory.GetFiles(currentDirectory);
+            Files = Directory.GetFiles(currentDirectory);
 
-
-            Accounts = files.Select(x => JsonConvert.DeserializeObject<Account>(File.ReadAllText(x))).ToList();
-            grid_accounts.DataSource = Accounts;
+            Accounts = Files.Select(x => JsonConvert.DeserializeObject<Account>(File.ReadAllText(x))).ToList();
+            AccountBinding.DataSource = Accounts;
+            grid_accounts.DataSource = AccountBinding;
         }
 
         public AccountSelector(EventHandler<Account> onSelectEvent, EventHandler onCancelled) : this()
@@ -47,6 +59,16 @@ namespace MiniBank
         private void grid_accounts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.ColumnIndex == 0 && e.RowIndex != -1) onSelectEvent(this, Accounts[e.RowIndex]);
+
+            if (e.ColumnIndex == 1 && e.RowIndex != -1)
+            {
+                var result = MessageBox.Show("Are you sure you want to remove this account?", "Changes cannot be reverted.", MessageBoxButtons.YesNo);
+                if(result == DialogResult.Yes)
+                {
+                    File.Delete(Files[e.RowIndex]);
+                    Initialize();
+                }
+            }
 
         }
 

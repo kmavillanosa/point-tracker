@@ -46,22 +46,25 @@ namespace MiniBank.Views
             // txt_name
             // 
             this.txt_name.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_name.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.Location = new System.Drawing.Point(93, 4);
             this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(377, 20);
+            this.txt_name.Size = new System.Drawing.Size(377, 26);
             this.txt_name.TabIndex = 0;
             // 
             // txt_code
             // 
             this.txt_code.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_code.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_code.Location = new System.Drawing.Point(93, 26);
             this.txt_code.Name = "txt_code";
-            this.txt_code.Size = new System.Drawing.Size(377, 20);
+            this.txt_code.Size = new System.Drawing.Size(377, 26);
             this.txt_code.TabIndex = 1;
             // 
             // txt_desc
             // 
             this.txt_desc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_desc.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_desc.Location = new System.Drawing.Point(93, 48);
             this.txt_desc.Name = "txt_desc";
             this.txt_desc.Size = new System.Drawing.Size(377, 168);

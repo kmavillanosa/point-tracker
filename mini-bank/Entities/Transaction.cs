@@ -15,5 +15,7 @@ namespace MiniBank.Entities
         public string Remarks { get; set; }
         public TransactionType Type { get; set; }
         public DateTime EntryDate { get; set; }
+        [DisplayName("Active")]
+        public bool IsActive { get; set; }
     }
 }

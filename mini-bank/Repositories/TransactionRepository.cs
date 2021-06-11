@@ -29,9 +29,17 @@ namespace MiniBank.Repositories
             return CheckBalance() > 0;
         }
 
-        public Account Withdraw(decimal amount)
+        public void SetState(int idx, bool state)
         {
+            using (var stateSaver = new StateSaver<Account>($@"Data/{account.Code}.json", account))
+            {
+                account.Transactions[idx].IsActive = state;
+            }
+        }
 
+
+        public Account Withdraw(decimal amount, string remarks = "Account withdrawal")
+        {
             if (ValidateIfAllowedForWithdrawal(amount))
             {
                 using (var stateSaver = new StateSaver<Account>($@"Data/{account.Code}.json", account))
@@ -41,8 +49,9 @@ namespace MiniBank.Repositories
                         Amount = amount,
                         EntryDate = DateTime.Now,
                         Id = Guid.NewGuid().ToString(),
-                        Remarks = "Withdrawal for this account",
-                        Type = TransactionType.Withdraw
+                        Remarks = remarks,
+                        Type = TransactionType.Withdraw,
+                        IsActive = true
                     });
                 };
                 OnWithdraw?.Invoke(this, account);
@@ -51,7 +60,7 @@ namespace MiniBank.Repositories
             return account;
         }
 
-        public Account Deposit(decimal amount)
+        public Account Deposit(decimal amount, string remarks = "Account deposit")
         {
             using(var stateSaver = new StateSaver<Account>($@"Data/{account.Code}.json", account))
             {
@@ -60,8 +69,9 @@ namespace MiniBank.Repositories
                     Amount = amount,
                     EntryDate = DateTime.Now,
                     Id = Guid.NewGuid().ToString(),
-                    Remarks = "deposit for this account",
-                    Type = TransactionType.Deposit
+                    Remarks = remarks,
+                    Type = TransactionType.Deposit,
+                    IsActive = true
                 });
             };
 
@@ -73,11 +83,11 @@ namespace MiniBank.Repositories
 
         public decimal CheckBalance()
         {
-            var totalDeposits = account.Transactions.Where(x => x.Type == TransactionType.Deposit).Sum(x => x.Amount);
-            var totalWithdrawal = account.Transactions.Where(x => x.Type == TransactionType.Withdraw).Sum(x => x.Amount);
+            var totalDeposits = account.Transactions.Where(x => x.Type == TransactionType.Deposit && x.IsActive).Sum(x => x.Amount);
+            var totalWithdrawal = account.Transactions.Where(x => x.Type == TransactionType.Withdraw && x.IsActive).Sum(x => x.Amount);
             return totalDeposits - totalWithdrawal;
         }
 
-       
+      
     }
 }
