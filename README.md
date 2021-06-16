@@ -1,2 +1,2 @@
 # point_tracker
-for training purposes
+for monitoring performance points
