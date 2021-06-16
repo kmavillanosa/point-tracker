@@ -1,2 +1,2 @@
-# mini-bank
+# point_tracker
 for training purposes
