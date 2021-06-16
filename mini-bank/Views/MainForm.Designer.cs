@@ -29,7 +29,7 @@ namespace mini_bank
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.layoutpanel = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -43,11 +43,12 @@ namespace mini_bank
             this.btn_deposit = new System.Windows.Forms.Button();
             this.btn_witdraw = new System.Windows.Forms.Button();
             this.transactionsGrid = new System.Windows.Forms.DataGridView();
-            this.ToggleActive = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ManagePanel = new System.Windows.Forms.SplitContainer();
+            this.ToggleActive = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Mode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.layoutpanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -195,7 +196,7 @@ namespace mini_bank
             this.btn_deposit.Name = "btn_deposit";
             this.btn_deposit.Size = new System.Drawing.Size(69, 23);
             this.btn_deposit.TabIndex = 2;
-            this.btn_deposit.Text = "Demerit";
+            this.btn_deposit.Text = "Merit";
             this.btn_deposit.UseVisualStyleBackColor = true;
             this.btn_deposit.Click += new System.EventHandler(this.btn_deposit_Click);
             // 
@@ -205,7 +206,7 @@ namespace mini_bank
             this.btn_witdraw.Name = "btn_witdraw";
             this.btn_witdraw.Size = new System.Drawing.Size(69, 23);
             this.btn_witdraw.TabIndex = 3;
-            this.btn_witdraw.Text = "Merit";
+            this.btn_witdraw.Text = "Demerit";
             this.btn_witdraw.UseVisualStyleBackColor = true;
             this.btn_witdraw.Click += new System.EventHandler(this.btn_witdraw_Click);
             // 
@@ -213,12 +214,11 @@ namespace mini_bank
             // 
             this.transactionsGrid.AllowUserToAddRows = false;
             this.transactionsGrid.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.transactionsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.transactionsGrid.BackgroundColor = System.Drawing.Color.White;
             this.transactionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.transactionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ToggleActive});
+            this.ToggleActive,
+            this.Mode});
             this.transactionsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.transactionsGrid.Location = new System.Drawing.Point(4, 237);
             this.transactionsGrid.MultiSelect = false;
@@ -232,15 +232,6 @@ namespace mini_bank
             this.transactionsGrid.TabIndex = 3;
             this.transactionsGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.transactionsGrid_CellClick);
             this.transactionsGrid.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.transactionsGrid_CellFormatting);
-            // 
-            // ToggleActive
-            // 
-            this.ToggleActive.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ToggleActive.Frozen = true;
-            this.ToggleActive.HeaderText = "State";
-            this.ToggleActive.Name = "ToggleActive";
-            this.ToggleActive.ReadOnly = true;
-            this.ToggleActive.Width = 38;
             // 
             // panel3
             // 
@@ -291,6 +282,24 @@ namespace mini_bank
             this.ManagePanel.SplitterDistance = 25;
             this.ManagePanel.TabIndex = 1;
             // 
+            // ToggleActive
+            // 
+            this.ToggleActive.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ToggleActive.Frozen = true;
+            this.ToggleActive.HeaderText = "State";
+            this.ToggleActive.Name = "ToggleActive";
+            this.ToggleActive.ReadOnly = true;
+            this.ToggleActive.Width = 38;
+            // 
+            // Mode
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mode.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Mode.Frozen = true;
+            this.Mode.HeaderText = "Mode";
+            this.Mode.Name = "Mode";
+            this.Mode.ReadOnly = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,10 +342,11 @@ namespace mini_bank
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewButtonColumn ToggleActive;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_summary;
+        private System.Windows.Forms.DataGridViewButtonColumn ToggleActive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mode;
     }
 }
 

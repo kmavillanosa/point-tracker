@@ -141,12 +141,20 @@ namespace mini_bank
                 {
                     var currentTransaction = Account.Transactions[e.RowIndex];
                     e.Value = currentTransaction.IsActive ? "Deactivate" : "Activate";
+                }
 
-                    transactionsGrid.Rows[e.RowIndex].DefaultCellStyle.BackColor
-                        = currentTransaction.IsActive ? ColorTranslator.FromHtml("#C8E6C9") : ColorTranslator.FromHtml("#e17055");
+                if(e.ColumnIndex == 1)
+                {
+                    var currentTransaction = Account.Transactions[e.RowIndex];
+                    e.Value = currentTransaction.Type == TransactionType.Demerit ? "[-]" :"[+]";
+
+
+                    transactionsGrid.Rows[e.RowIndex].DefaultCellStyle.ForeColor
+                        = currentTransaction.Type != TransactionType.Demerit  ? ColorTranslator.FromHtml("#05c46b") : ColorTranslator.FromHtml("#ee5253");
 
 
                 }
+
             }));
             
        
