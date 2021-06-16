@@ -117,7 +117,7 @@ namespace mini_bank
 
         private void btn_witdraw_Click(object sender, EventArgs e)
         {
-            var createTransaction = new CreateTransaction(_transactionRepository,TransactionType.Withdraw);
+            var createTransaction = new CreateTransaction(_transactionRepository,TransactionType.Demerit);
             if(createTransaction.ShowDialog() == DialogResult.OK)
             {
                 _transactionRepository.Withdraw(createTransaction.Amount, createTransaction.Remarks);
@@ -126,7 +126,7 @@ namespace mini_bank
 
         private void btn_deposit_Click(object sender, EventArgs e)
         {
-            var createTransaction = new CreateTransaction(_transactionRepository, TransactionType.Deposit);
+            var createTransaction = new CreateTransaction(_transactionRepository, TransactionType.Merit);
             if (createTransaction.ShowDialog() == DialogResult.OK)
             {
                 _transactionRepository.Deposit(createTransaction.Amount, createTransaction.Remarks);

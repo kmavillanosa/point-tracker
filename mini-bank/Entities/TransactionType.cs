@@ -8,6 +8,6 @@ namespace point_tracker.Entities
 {
     public enum TransactionType
     {
-        NotSet, Withdraw, Deposit
+        NotSet, Demerit, Merit
     }
 }

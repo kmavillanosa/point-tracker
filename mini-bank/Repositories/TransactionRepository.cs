@@ -50,7 +50,7 @@ namespace point_tracker.Repositories
                         EntryDate = DateTime.Now,
                         Id = Guid.NewGuid().ToString(),
                         Remarks = remarks,
-                        Type = TransactionType.Withdraw,
+                        Type = TransactionType.Demerit,
                         IsActive = true
                     });
                 };
@@ -70,7 +70,7 @@ namespace point_tracker.Repositories
                     EntryDate = DateTime.Now,
                     Id = Guid.NewGuid().ToString(),
                     Remarks = remarks,
-                    Type = TransactionType.Deposit,
+                    Type = TransactionType.Merit,
                     IsActive = true
                 });
             };
@@ -83,8 +83,8 @@ namespace point_tracker.Repositories
 
         public int CheckBalance()
         {
-            var totalDeposits = account.Transactions.Where(x => x.Type == TransactionType.Deposit && x.IsActive).Sum(x => x.Amount);
-            var totalWithdrawal = account.Transactions.Where(x => x.Type == TransactionType.Withdraw && x.IsActive).Sum(x => x.Amount);
+            var totalDeposits = account.Transactions.Where(x => x.Type == TransactionType.Merit && x.IsActive).Sum(x => x.Amount);
+            var totalWithdrawal = account.Transactions.Where(x => x.Type == TransactionType.Demerit && x.IsActive).Sum(x => x.Amount);
             return totalDeposits - totalWithdrawal;
         }
 

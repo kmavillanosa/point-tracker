@@ -38,11 +38,11 @@ namespace point_tracker.Views
                 Amount = Convert.ToInt32(txt_amount.Text);
                 Remarks = txt_remarks.Text;
 
-                if (type == TransactionType.Withdraw)
+                if (type == TransactionType.Demerit)
                 {
                     if (!Repository.ValidateIfAllowedForWithdrawal(Amount))
                     {
-                        MessageBox.Show($"Requested amount for withdrawal exceeds account balance of: {Repository.CheckBalance()}");
+                        MessageBox.Show($"Requested value for merit exceeds account balance of: {Repository.CheckBalance()}");
                     }
                     else
                     {

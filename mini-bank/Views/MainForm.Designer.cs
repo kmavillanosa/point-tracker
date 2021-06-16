@@ -29,7 +29,7 @@ namespace mini_bank
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.layoutpanel = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -195,7 +195,7 @@ namespace mini_bank
             this.btn_deposit.Name = "btn_deposit";
             this.btn_deposit.Size = new System.Drawing.Size(69, 23);
             this.btn_deposit.TabIndex = 2;
-            this.btn_deposit.Text = "Deposit";
+            this.btn_deposit.Text = "Demerit";
             this.btn_deposit.UseVisualStyleBackColor = true;
             this.btn_deposit.Click += new System.EventHandler(this.btn_deposit_Click);
             // 
@@ -205,7 +205,7 @@ namespace mini_bank
             this.btn_witdraw.Name = "btn_witdraw";
             this.btn_witdraw.Size = new System.Drawing.Size(69, 23);
             this.btn_witdraw.TabIndex = 3;
-            this.btn_witdraw.Text = "Withdraw";
+            this.btn_witdraw.Text = "Merit";
             this.btn_witdraw.UseVisualStyleBackColor = true;
             this.btn_witdraw.Click += new System.EventHandler(this.btn_witdraw_Click);
             // 
@@ -213,8 +213,8 @@ namespace mini_bank
             // 
             this.transactionsGrid.AllowUserToAddRows = false;
             this.transactionsGrid.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.transactionsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.transactionsGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.transactionsGrid.BackgroundColor = System.Drawing.Color.White;
             this.transactionsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.transactionsGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
