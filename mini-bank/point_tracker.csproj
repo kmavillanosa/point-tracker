@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CF6B6B91-E23D-49CF-80A3-DD1C8754A1C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>MiniBank</RootNamespace>
-    <AssemblyName>mini-bank</AssemblyName>
+    <RootNamespace>point_tracker</RootNamespace>
+    <AssemblyName>point_tracker</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -119,6 +119,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hand-gesture.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

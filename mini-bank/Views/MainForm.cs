@@ -1,7 +1,7 @@
-﻿using MiniBank;
-using MiniBank.Entities;
-using MiniBank.Repositories;
-using MiniBank.Views;
+﻿using point_tracker;
+using point_tracker.Entities;
+using point_tracker.Repositories;
+using point_tracker.Views;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -58,7 +58,7 @@ namespace mini_bank
             lbl_balance.ForeColor = AccountColorMode;
             lbl_code.Text = e.Code;
 
-            lbl_balance.Text =$"₱{_transactionRepository.CheckBalance()}";
+            lbl_balance.Text =$"{_transactionRepository.CheckBalance()}";
             lbl_summary.Text = $"{Account.Name}:( {Account.Description} )";
 
             btn_witdraw.Enabled = _transactionRepository.ValidateIfAllowedForWithdrawal();
@@ -78,7 +78,7 @@ namespace mini_bank
             {
                 lbl_balance.ForeColor = AccountColorMode;
 
-                lbl_balance.Text = $"₱{_transactionRepository.CheckBalance()}";
+                lbl_balance.Text = $"{_transactionRepository.CheckBalance()}";
                 btn_witdraw.Enabled = _transactionRepository.ValidateIfAllowedForWithdrawal();
 
                 account.Transactions.Reverse();
@@ -96,7 +96,7 @@ namespace mini_bank
             {
                 lbl_balance.ForeColor = AccountColorMode;
 
-                lbl_balance.Text = $"₱{_transactionRepository.CheckBalance()}";
+                lbl_balance.Text = $"{_transactionRepository.CheckBalance()}";
                 btn_witdraw.Enabled = _transactionRepository.ValidateIfAllowedForWithdrawal();
                 account.Transactions.Reverse();
 
@@ -166,7 +166,7 @@ namespace mini_bank
                     _transactionRepository.SetState(e.RowIndex, !currentTransaction.IsActive);
 
                     lbl_balance.ForeColor = AccountColorMode;
-                    lbl_balance.Text = $"₱{_transactionRepository.CheckBalance()}";
+                    lbl_balance.Text = $"{_transactionRepository.CheckBalance()}";
                     btn_witdraw.Enabled = _transactionRepository.ValidateIfAllowedForWithdrawal();
                 }
             }

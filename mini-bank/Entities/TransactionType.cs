@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniBank.Entities
+namespace point_tracker.Entities
 {
     public enum TransactionType
     {

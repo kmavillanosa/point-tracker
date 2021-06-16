@@ -1,11 +1,11 @@
-﻿using MiniBank.Entities;
+﻿using point_tracker.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniBank.Repositories
+namespace point_tracker.Repositories
 {
     public class TransactionRepository : ITransactionRepository
     {
@@ -19,7 +19,7 @@ namespace MiniBank.Repositories
             this.account = account;
         }
 
-        public bool ValidateIfAllowedForWithdrawal(decimal amount)
+        public bool ValidateIfAllowedForWithdrawal(int amount)
         {
             return CheckBalance() >= amount;
         }
@@ -38,7 +38,7 @@ namespace MiniBank.Repositories
         }
 
 
-        public Account Withdraw(decimal amount, string remarks = "Account withdrawal")
+        public Account Withdraw(int amount, string remarks = "Account withdrawal")
         {
             if (ValidateIfAllowedForWithdrawal(amount))
             {
@@ -60,7 +60,7 @@ namespace MiniBank.Repositories
             return account;
         }
 
-        public Account Deposit(decimal amount, string remarks = "Account deposit")
+        public Account Deposit(int amount, string remarks = "Account deposit")
         {
             using(var stateSaver = new StateSaver<Account>($@"Data/{account.Code}.json", account))
             {
@@ -81,7 +81,7 @@ namespace MiniBank.Repositories
         }
 
 
-        public decimal CheckBalance()
+        public int CheckBalance()
         {
             var totalDeposits = account.Transactions.Where(x => x.Type == TransactionType.Deposit && x.IsActive).Sum(x => x.Amount);
             var totalWithdrawal = account.Transactions.Where(x => x.Type == TransactionType.Withdraw && x.IsActive).Sum(x => x.Amount);

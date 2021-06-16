@@ -1,5 +1,5 @@
 ﻿
-namespace MiniBank
+namespace point_tracker
 {
     partial class AccountSelector
     {

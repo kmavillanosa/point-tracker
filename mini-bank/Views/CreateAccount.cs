@@ -1,5 +1,5 @@
-﻿using MiniBank.Entities;
-using MiniBank.Repositories;
+﻿using point_tracker.Entities;
+using point_tracker.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiniBank.Views
+namespace point_tracker.Views
 {
     public partial class CreateAccount : Form
     {

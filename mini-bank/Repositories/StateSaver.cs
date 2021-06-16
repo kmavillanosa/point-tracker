@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniBank.Repositories
+namespace point_tracker.Repositories
 {
     public class StateSaver<T> : IDisposable
         where T : class

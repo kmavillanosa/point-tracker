@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MiniBank.Properties {
+namespace point_tracker.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace MiniBank.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MiniBank.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("point_tracker.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -66,6 +66,16 @@ namespace MiniBank.Properties {
         internal static System.Drawing.Bitmap cash {
             get {
                 object obj = ResourceManager.GetObject("cash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hand_gesture {
+            get {
+                object obj = ResourceManager.GetObject("hand_gesture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mini-bank", "mini-bank\mini-bank.csproj", "{CF6B6B91-E23D-49CF-80A3-DD1C8754A1C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "point_tracker", "mini-bank\point_tracker.csproj", "{CF6B6B91-E23D-49CF-80A3-DD1C8754A1C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,5 +1,5 @@
 ﻿
-namespace MiniBank.Views
+namespace point_tracker.Views
 {
     partial class CreateTransaction
     {

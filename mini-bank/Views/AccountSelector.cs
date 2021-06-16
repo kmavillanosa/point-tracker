@@ -1,5 +1,5 @@
-﻿using MiniBank.Entities;
-using MiniBank.Views;
+﻿using point_tracker.Entities;
+using point_tracker.Views;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiniBank
+namespace point_tracker
 {
     public partial class AccountSelector : UserControl
     {
